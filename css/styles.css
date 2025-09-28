@@ -1,36 +1,50 @@
-/* Grundlayout */
-body { margin:0; font-family: Arial, sans-serif; background:#0d0d0d; color:#fff; }
-header { display:flex; align-items:center; justify-content:center; position:relative; padding:1rem; background:#111; }
-header h1 { margin:0; font-size:2rem; }
+/* Body & Hintergrund */
+body { margin:0; font-family: Arial, sans-serif; background:#0d0d0d; color:#fff; overflow-x:hidden; }
+
+/* Subtiles Trading-Hintergrund */
+body::before {
+  content:"";
+  position:fixed; top:0; left:0; width:100%; height:100%;
+  background: linear-gradient(135deg, rgba(255,215,0,0.05) 1px, transparent 1px), 
+              linear-gradient(225deg, rgba(255,215,0,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index:-1;
+}
+
+/* Header */
+header { display:flex; align-items:center; justify-content:center; position:relative; padding:1rem; background:#0d0d0d; border-bottom:1px solid #FFD700; }
+header h1 { margin:0; font-size:2rem; color:#FFD700; letter-spacing:1px; }
 
 /* Hamburger */
 .hamburger { position:absolute; left:1rem; top:1rem; cursor:pointer; display:flex; flex-direction:column; justify-content:space-between; width:25px; height:18px; }
-.hamburger div { height:3px; background:#fff; border-radius:2px; transition:0.3s; }
+.hamburger div { height:3px; background:#FFD700; border-radius:2px; transition:0.3s; }
 
 /* Side Menu */
-nav { position:fixed; top:0; left:-250px; width:250px; height:100%; background:#1a1a1a; padding:2rem 1rem; transition:0.3s; display:flex; flex-direction:column; gap:1.5rem; z-index:1000; }
-nav a { color:#fff; text-decoration:none; font-size:1.2rem; }
+nav { position:fixed; top:0; left:-250px; width:250px; height:100%; background:#1a1a1a; padding:2rem 1rem; transition:0.3s; display:flex; flex-direction:column; gap:1.5rem; z-index:1000; border-right:1px solid #FFD700; }
+nav a { color:#FFD700; text-decoration:none; font-size:1.2rem; }
 nav.show { left:0; }
 
 /* Sections */
 section { padding:4rem 2rem; max-width:1000px; margin:auto; }
-h2 { color:#ff6b6b; }
+h2 { color:#FFD700; }
 
 /* Hero */
-.hero p { font-size:1.2rem; margin-top:1rem; }
-.cta a { display:inline-block; margin-top:1rem; background:#f06595; color:#fff; padding:0.8rem 2rem; border-radius:10px; text-decoration:none; font-weight:bold; transition:0.3s; }
-.cta a:hover { background:#ff6b6b; }
+.hero p { font-size:1.2rem; margin-top:1rem; color:#fff; }
+.cta a { display:inline-block; margin-top:1rem; background:#FFD700; color:#0d0d0d; padding:0.8rem 2rem; border-radius:10px; text-decoration:none; font-weight:bold; transition:0.3s; }
+.cta a:hover { background:#e6c200; }
 
 /* NFT Seltenheiten */
 .rarity { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:2rem; }
-.rarity div { padding:1.5rem; border-radius:15px; width:140px; text-align:center; font-weight:bold; font-size:1rem; color:#fff; box-shadow:0 0 15px rgba(255,255,255,0.1); transition:0.3s; cursor:pointer; }
-.rarity div:hover { transform: translateY(-5px) scale(1.05); box-shadow:0 0 25px rgba(255,255,255,0.4); }
-.common { background:#6c757d; }
-.rare { background:#0dcaf0; }
-.epic { background:#6610f2; }
-.mythic { background:#fd7e14; }
-.legendary { background:#ffc107; }
-.unknown { background:#dc3545; }
+.rarity div { padding:1.5rem; border-radius:15px; width:140px; text-align:center; font-weight:bold; font-size:1rem; color:#0d0d0d; background: linear-gradient(135deg, #FFD700, #e6c200); box-shadow:0 0 20px rgba(255,215,0,0.6); transition:0.3s; cursor:pointer; }
+.rarity div:hover { transform: translateY(-5px) scale(1.05); box-shadow:0 0 30px rgba(255,215,0,0.9); }
+
+/* NFT Variationen */
+.common { background: linear-gradient(135deg, #FFD700, #e6c200); }
+.rare { background: linear-gradient(135deg, #FFC300, #FFB000); }
+.epic { background: linear-gradient(135deg, #FFAA00, #FF9900); }
+.mythic { background: linear-gradient(135deg, #FF8C00, #FF7A00); }
+.legendary { background: linear-gradient(135deg, #FF6F00, #FF5E00); }
+.unknown { background: linear-gradient(135deg, #FF4500, #FF3300); }
 
 /* Footer */
-footer { text-align:center; padding:1rem; background:#111; font-size:0.8rem; }
+footer { text-align:center; padding:1rem; background:#0d0d0d; font-size:0.8rem; border-top:1px solid #FFD700; }
